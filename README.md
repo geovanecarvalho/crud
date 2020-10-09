@@ -15,7 +15,7 @@ Sistema em django para implementação de crud.
 ### **Instalando todas as dependências**
 
 ```
-$ mkvirtualenv censo -p python3
+$ mkvirtualenv crud-geobit -p python3
 $ pip install -r requirements.txt
 ```
 
