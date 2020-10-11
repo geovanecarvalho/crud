@@ -32,15 +32,18 @@
     </tr>
   </thead>
   <tbody>
+     {% for i in obj %}
     <tr>
-      {% for i in obj %}
+     
       <th scope="row">{{i.id}}</th>
-      <td><a href="#">{{i.autor}}</a></td>
+      <td><a href="/update/autor/{{i.id}}">{{i.autor}}</a></td>
       <td><a href="#">{{i.nome}}</a></td>
       <td>R$ {{i.preco}}</td>
 
-      {% endfor %}
+      
     </tr>
+
+    {% endfor %}
   </tbody>
 </table>
 {% endif %}
