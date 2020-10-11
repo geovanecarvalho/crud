@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import AutorForm, LivroForm
 from .models import Livro, Autor
+from django.contrib import messages
 # Create your views here.
 
 def home(request):
@@ -16,6 +17,8 @@ def autor(request):
 	form = AutorForm(request.POST or None)
 	if form.is_valid():
 		form.save()
+
+		messages.success(request, 'Autor cadastrado com Sucesso!')
 		return redirect('/autor/')
 	
 	return render(request, 'autor.html', {'form': form})
@@ -43,6 +46,7 @@ def livro(request):
 	form = LivroForm(request.POST or None)
 	if form.is_valid():
 		form.save()
+		messages.success(request, 'Livro cadastrado com Sucesso!')
 		return redirect('/livro/')	
 	return render(request, 'livro.html', {'form': form})
 
