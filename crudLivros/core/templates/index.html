@@ -20,38 +20,35 @@
 	<div class="container">
 		<div class="row">
 			<div class="col">
+				{% if obj %}
 				<table class="table">
-{% if obj %}
-  <thead class="thead-dark">
+  					<thead class="thead-dark">
     
-      <tr>
-      <th scope="col">Cod</th>
-      <th scope="col">Autor</th>
-      <th scope="col">Livro</th>
-      <th scope="col">Preço</th>
-    </tr>
-  </thead>
-  <tbody>
-     {% for i in obj %}
-    <tr>
-     
-      <th scope="row">{{i.id}}</th>
-      <td><a href="/update/autor/{{i.id}}">{{i.autor}}</a></td>
-      <td><a href="#">{{i.nome}}</a></td>
-      <td>R$ {{i.preco}}</td>
+      					<tr>
+      						<th scope="col">Cod</th>
+      						<th scope="col">Autor</th>
+      						<th scope="col">Livro</th>
+      						<th scope="col">Preço</th>
+    					</tr>
+  						</thead>
+  							<tbody>
+     							{% for i in obj %}
+    							<tr>
+     								<th scope="row">{{i.id}}</th>
+      								<td><a href="/update">{{i.autor}}</a></td>
+      								<td><a href="/update/livro/{{i.id}}">{{i.nome}}</a></td>
+      								<td>R$ {{i.preco}}</td>
+    							</tr>
+    							{% endfor %}
+  							</tbody>
 
-      
-    </tr>
-
-    {% endfor %}
-  </tbody>
-</table>
-{% endif %}
-
-
-</table>
-
+				</table>
+				{% endif %}
 			</div>
 		</div>
 	</div>
+
+
+		
+
 {% endblock %}

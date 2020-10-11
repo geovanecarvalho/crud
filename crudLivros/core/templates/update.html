@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+
+<div class="container">
+  <div class="row">
+    <div class="col m-2 p-3"></div>
+    <h3>Atulizar Autor</h3>
+  </div>
+</div>
+
+<div class="container">
+		<div class="row">
+			<div class="col">
+				
+				<table class="table">
+  					<thead class="thead-dark">
+    
+      					<tr>
+      						<th scope="col">Cod</th>
+      						<th scope="col">Autor</th>
+      					</tr>
+  						</thead>
+  							<tbody>
+     							{% for i in obj %}
+    							<tr>
+     								<th scope="row">{{i.id}}</th>
+      								<td><a href="update/autor/{{i.id}}">{{i.nome}}</a></td>
+      								
+    							</tr>
+      								
+    							{% endfor %}
+  							</tbody>
+
+				</table>
+				
+			</div>
+		</div>
+	</div>	
+
+  {% endblock %}

@@ -12,6 +12,7 @@ def home(request):
 
 
 def autor(request):
+	
 	form = AutorForm(request.POST or None)
 	if form.is_valid():
 		form.save()
@@ -45,3 +46,25 @@ def livro(request):
 		return redirect('/livro/')	
 	return render(request, 'livro.html', {'form': form})
 
+def update_livro(request, id):
+	obj = Livro.objects.get(id=id)
+	form = LivroForm(request.POST or None, instance=obj)
+	
+	if form.is_valid():
+		form.save()
+		return redirect('/')
+
+	return render(request, 'livro.html', {'form': form, 'obj': obj})
+
+def delete_livro(request, id):
+	obj = Livro.objects.get(id=id)
+
+	if request.method == 'POST':
+		obj.delete()
+		return redirect('/')
+	return render(request, 'auto-delete-confirma.html', {'obj': obj})
+
+
+def update(request):
+	obj = Autor.objects.all()
+	return render(request, 'update.html', {'obj': obj})

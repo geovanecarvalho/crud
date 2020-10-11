@@ -8,11 +8,20 @@
 			<form method="POST">
 				<div class="form-group">
 					{% csrf_token %}
-    				{{form}}<a href="/autor/">Cadastrar autor</a>
+    				{{form}}
+
+    				<a href="/autor/">Cadastrar autor</a>
     				
 				</div>
-
-				<button type="submit" class="btn btn-primary">Cadastrar</button>
+				{% if obj %}
+					<button type="submit" class="btn btn-primary">Atualizar</button>
+					<div class='col'>
+						<a href="/delete/livro/{{obj.id}}">Deletar</a>
+					</div>
+				{%else%}
+					<button type="submit" class="btn btn-primary">Cadastrar</button>
+				{%endif%}
+				
 			</form>
 		</div>
 	</div>
