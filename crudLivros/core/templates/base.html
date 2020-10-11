@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>
+  <title>Acervo de Livros</title>
+  <meta charset="utf-8"/>
+  
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+
+<style type="text/css">
+    body{
+      background-color: #D3D3D3;
+    }
+</style>
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/">Home</a>
+            <a href="/admin/">Login</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+  
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                
+                  
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Cadastro
+                    </a>
+              
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/autor/">Autor</a>
+                        {%if autor%}
+                        <a class="dropdown-item" href="/livro/">Livro</a>
+                        {% endif %}
+                        
+                      </div>
+                  </li>
+              </ul>
+            </div>
+        </nav>
+
+      </div>
+    </div>
+  </div>
+
+  {% block content%}
+  {% endblock %}
+  
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <footer class="page-footer font-small bg-dark text-light">
+          <div class="footer-copyright text-center py-3">© 2020 Copyright: Geobit
+    
+          </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+ 
+  </body>
+
+  <script type="text/javascript" src="{% static 'js/jquery-3.2.1.min.js'%}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>  
+    <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+</html>

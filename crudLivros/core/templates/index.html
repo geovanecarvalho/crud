@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+
+	<div class="container">
+		<div class="row">
+			<div class="col m-3">
+				<h1>Acervo de Livros</h1>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<img src="{% static 'images/acervo.jpg' %}" class="img-fluid" alt="Imagem responsiva" width=400>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<table class="table">
+{% if obj %}
+  <thead class="thead-dark">
+    
+      <tr>
+      <th scope="col">Cod</th>
+      <th scope="col">Autor</th>
+      <th scope="col">Livro</th>
+      <th scope="col">Preço</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      {% for i in obj %}
+      <th scope="row">{{i.id}}</th>
+      <td><a href="#">{{i.autor}}</a></td>
+      <td><a href="#">{{i.nome}}</a></td>
+      <td>R$ {{i.preco}}</td>
+
+      {% endfor %}
+    </tr>
+  </tbody>
+</table>
+{% endif %}
+
+
+</table>
+
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -15,7 +15,7 @@ class Autor(models.Model):
 
 class Livro(models.Model):
 	nome = models.CharField(max_length=50, unique=True)
-	quantidade_Pagina = models.PositiveIntegerField("Quantidade de Página")
+	quantidade_pagina = models.PositiveIntegerField("Quantidade de Página")
 	preco = models.DecimalField("preço", max_digits=10, decimal_places=2, validators = [MinValueValidator(0.1)] )
 	data_inclusao = models.DateField("Data de Inclusão")
 	autor = models.ForeignKey("Autor", on_delete=models.CASCADE)

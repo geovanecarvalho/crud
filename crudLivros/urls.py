@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from crudLivros.core.views import home, autor, livro
 
 urlpatterns = [
+	path('', home),
+	path('autor/', autor),
+	path('livro/', livro),
     path('admin/', admin.site.urls),
 ]
