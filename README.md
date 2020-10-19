@@ -23,7 +23,10 @@ $ pip install -r requirements.txt
 ```
 $ python manage.py migrate
 ```
-
+### Teste
+```
+python manage.py test
+```
 ### Criar usuário para login no sistema
 ```
 $ python manage.py createsuperuser

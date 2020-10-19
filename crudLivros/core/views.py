@@ -3,8 +3,8 @@ from django.http import HttpResponse
 from .forms import AutorForm, LivroForm
 from .models import Livro, Autor
 from django.contrib import messages
-# Create your views here.
 
+#Home 
 def home(request):
 	obj = Livro.objects.all()
 	autor = Autor.objects.all()
@@ -13,7 +13,6 @@ def home(request):
 
 
 def autor(request):
-	
 	form = AutorForm(request.POST or None)
 	if form.is_valid():
 		form.save()

@@ -17,14 +17,14 @@ from django.contrib import admin
 from django.urls import path
 from crudLivros.core import views
 urlpatterns = [
-	path('', views.home),
-	path('autor/', views.autor),
-    path('update/autor/<int:id>/', views.update_autor),
-    path('delete/autor/<int:id>/', views.delete_autor),
-    path('update', views.update),
+	path('', views.home, name='home'),
+	path('autor/', views.autor, name='autor'),
+    path('update/autor/<int:id>/', views.update_autor, name='update_autor'),
+    path('delete/autor/<int:id>/', views.delete_autor, name='delete_autor'),
+    path('update', views.update, name='update'),
 	
-    path('livro/', views.livro),
-    path('update/livro/<int:id>/', views.update_livro),
-    path('delete/livro/<int:id>/', views.delete_livro),
+    path('livro/', views.livro, name='livro'),
+    path('update/livro/<int:id>/', views.update_livro, name='update_livro'),
+    path('delete/livro/<int:id>/', views.delete_livro, name='delete_livro'),
     path('admin/', admin.site.urls),
 ]

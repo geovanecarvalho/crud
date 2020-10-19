@@ -20,7 +20,7 @@ class LivroForm(forms.ModelForm):
 		widgets = {
 			'nome': forms.TextInput(attrs={'class':'form-control' ,'placeholder':'Digite o nome do livro'},),
 			'quantidade_pagina': forms.NumberInput(attrs={'class':'form-control' ,'placeholder':'Quantidade de Página'},),
-			'preco': forms.NumberInput(attrs={'class':'form-control' ,'placeholder':'R$', 'type':'number'},),
+			'preco': forms.NumberInput(attrs={'class':'form-control' ,'placeholder':'R$ 0,00', 'type':'number'},),
 			'data_inclusao': forms.DateInput(attrs={'class':'form-control' ,'placeholder':'Data Ex: 02/06/2000', 'type':'date'},),
 			'autor': forms.Select(attrs={'class':'form-control' },),
 			
