@@ -2,7 +2,7 @@
 
 Sistema em django para implementação de crud.
 
-## Requirements
+## Requirementos
 
 * [Django](https://www.djangoproject.com/)
 * [Git](http://git-scm.com/)
