@@ -15,17 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from crudLivros.core.views import home, autor, livro, update_autor, delete_autor, update_livro, delete_livro, update
-
+from crudLivros.core import views
 urlpatterns = [
-	path('', home),
-	path('autor/', autor),
-    path('update/autor/<int:id>/', update_autor),
-    path('delete/autor/<int:id>/', delete_autor),
-    path('update', update),
+	path('', views.home),
+	path('autor/', views.autor),
+    path('update/autor/<int:id>/', views.update_autor),
+    path('delete/autor/<int:id>/', views.delete_autor),
+    path('update', views.update),
 	
-    path('livro/', livro),
-    path('update/livro/<int:id>/', update_livro),
-    path('delete/livro/<int:id>/', delete_livro),
+    path('livro/', views.livro),
+    path('update/livro/<int:id>/', views.update_livro),
+    path('delete/livro/<int:id>/', views.delete_livro),
     path('admin/', admin.site.urls),
 ]
