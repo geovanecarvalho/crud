@@ -1,7 +1,7 @@
 from django.db import models
 from django.core.validators import  MinValueValidator
 
-
+#Tabela de Autor
 class Autor(models.Model):
 	nome = models.CharField(max_length=50, unique=True)
 
@@ -12,7 +12,7 @@ class Autor(models.Model):
 	def __str__(self):
 		return self.nome
 
-
+#Tabela de livros
 class Livro(models.Model):
 	nome = models.CharField(max_length=50, unique=True)
 	quantidade_pagina = models.PositiveIntegerField("Quantidade de Página")
