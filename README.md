@@ -37,4 +37,4 @@ $ python manage.py createsuperuser
 $ python manage.py runserver
 ```
 Após subir o Django, verifique na porta 8000:
-*http://localhost:8000/admin*
+*http://localhost:8000/*
