@@ -8,6 +8,10 @@ from django.contrib import messages
 def home(request):
 	obj = Livro.objects.all()
 	autor = Autor.objects.all()
+	search = request.GET.get('search')
+	if search:
+		obj = Livro.objects.filter(nome__icontains=search) or Autor.objects.filter(nome__icontains=search)
+		return render(request, 'index.html', {'obj': obj})
 
 	return render(request, 'index.html', {'obj': obj, 'autor': autor})
 

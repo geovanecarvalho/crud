@@ -4,22 +4,36 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col m-3">
+			<div class="col m-2">
 				<h1>Acervo de Livros</h1>
+			</div>
+		</div>
+	</div>
+	
+
+	<div class="container">
+		<div class="row">
+			<div class="col m-3">
+				<img src="{% static 'images/acervo.jpg' %}" class="img-fluid" alt="Imagem responsiva" width=400>
 			</div>
 		</div>
 	</div>
 
 	<div class="container">
 		<div class="row">
-			<div class="col">
-				<img src="{% static 'images/acervo.jpg' %}" class="img-fluid" alt="Imagem responsiva" width=400>
+			<div class="col-5 search-form m-3">
+				<form  method="GET" id="search-form" class="form-inline">
+					<input class="form-control" id="search" type="text" name="search" placeholder="Buscar">
+					
+					<button type="submit" class="btn btn-primary">Pesquisar</button>		
+				</form>
 			</div>
 		</div>
 	</div>
 	<div class="container">
 		<div class="row">
 			<div class="col">
+
 				{% if obj %}
 				<table class="table">
   					<thead class="thead-dark">
@@ -37,11 +51,26 @@
      							{% for i in obj %}
     							<tr>
      								<th scope="row">{{i.id}}</th>
+     								
+      								{% if i.autor %}
       								<td><a href="/update">{{i.autor}}</a></td>
       								<td><a href="/update/livro/{{i.id}}">{{i.nome}}</a></td>
       								<td>{{i.quantidade_pagina}} Páginas</td>
       								<td>R$ {{i.preco}}</td>
       								<td>{{i.data_inclusao}}</td>
+      								
+      								
+      								{%else%}
+      								
+      								<td><a href="/update">{{i.nome}}</a></td>
+      								<td><a href="/update">{{i.autor}}</a></td>
+      								<td>{{i.quantidade_pagina}} Páginas</td>
+      								<td>R$ {{i.preco}}</td>
+      								<td>{{i.data_inclusao}}</td>
+      								
+      								{%endif%}
+
+      							
     							</tr>
     							{% endfor %}
   							</tbody>
